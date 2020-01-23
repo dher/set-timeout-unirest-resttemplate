@@ -23,7 +23,10 @@ Bisa timeout dikarenakan proses di API/server tujuan memakan waktu yang sangat l
     RestTemplate restTemplate = new RestTemplate();
     restTemplate.setRequestFactory(requestFactory);
     response = restTemplate.getForObject("http://localhost:8080/greeting", String.class);
-```
+```  
+perlu menggunakan **requestFactory** untuk setting/config timeout.  
+lalu set **requestFactory** ke rest template:  
+    **restTemplate.setRequestFactory(requestFactory);**
 
 ## Unirest  
 ```
@@ -33,4 +36,5 @@ Bisa timeout dikarenakan proses di API/server tujuan memakan waktu yang sangat l
 Unirest.setTimeouts(_ConnectTimeout_, _SocketTimeout_);  
 **SocketTimeout** sama pengertian nya dengan **ReadTimeout**  
 
+## Sample Code  
 sample code ada di https://github.com/dher/set-timeout-unirest-resttemplate/blob/master/src/main/java/com/example/restservice/CobaTimeout.java
