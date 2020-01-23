@@ -46,7 +46,7 @@ public class CobaTimeout {
         HttpResponse<String> response = null;
 
         try {
-            Unirest.setTimeouts(5000, 5000);
+            Unirest.setTimeouts(5000, 5000); // milisecond, 5 detik
             response = Unirest.get("http://localhost:8080/greeting").asString();
 
         } catch (UnirestException e) {
